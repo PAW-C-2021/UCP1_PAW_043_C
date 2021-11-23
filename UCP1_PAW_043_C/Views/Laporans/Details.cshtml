@@ -1,0 +1,41 @@
+﻿@model UCP1_PAW_043_C.Models.Laporan
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details Data</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayName("Admin")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdAdminNavigation.NamaAdmin)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Tanggal")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdCatNavigation.Tanggal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Total Pemasukan")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TotalPem)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Total Pengeluaran")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TotalPen)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdLaporan">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,51 @@
+﻿@model UCP1_PAW_043_C.Models.Catatan
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Data</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdCat" class="control-label">ID Catatan</label>
+                <input asp-for="IdCat" class="form-control" />
+                <span asp-validation-for="IdCat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tanggal" class="control-label">Tanggal</label>
+                <input asp-for="Tanggal" class="form-control" />
+                <span asp-validation-for="Tanggal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdKategori" class="control-label">ID Kategori</label>
+                <select asp-for="IdKategori" class="form-control" asp-items="ViewBag.IdKategori"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="KeteranganCat" class="control-label">Keterangan</label>
+                <input asp-for="KeteranganCat" class="form-control" />
+                <span asp-validation-for="KeteranganCat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HargaCat" class="control-label">Harga</label>
+                <input asp-for="HargaCat" class="form-control" />
+                <span asp-validation-for="HargaCat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

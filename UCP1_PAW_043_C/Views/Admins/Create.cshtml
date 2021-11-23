@@ -1,0 +1,42 @@
+﻿@model UCP1_PAW_043_C.Models.Admin
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Data</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdAdmin" class="control-label">ID Admin</label>
+                <input asp-for="IdAdmin" class="form-control" />
+                <span asp-validation-for="IdAdmin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NamaAdmin" class="control-label">Nama Admin</label>
+                <input asp-for="NamaAdmin" class="form-control" />
+                <span asp-validation-for="NamaAdmin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PasswordAdmin" class="control-label">Password Admin</label>
+                <input asp-for="PasswordAdmin" class="form-control" />
+                <span asp-validation-for="PasswordAdmin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

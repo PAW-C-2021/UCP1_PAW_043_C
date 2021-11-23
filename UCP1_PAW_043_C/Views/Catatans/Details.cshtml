@@ -1,0 +1,41 @@
+﻿@model UCP1_PAW_043_C.Models.Catatan
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details Data</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayName("Tanggal")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tanggal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Kategori")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdKategoriNavigation.NamaKategori)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Keterangan")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KeteranganCat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Harga")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HargaCat)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdCat">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

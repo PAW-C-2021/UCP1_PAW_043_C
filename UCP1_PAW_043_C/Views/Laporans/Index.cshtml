@@ -1,0 +1,53 @@
+﻿@model IEnumerable<UCP1_PAW_043_C.Models.Laporan>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Data Laporan</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Admin")
+            </th>
+            <th>
+                @Html.DisplayName("Tanggal")
+            </th>
+            <th>
+                @Html.DisplayName("Total Pemasukan")
+            </th>
+            <th>
+                @Html.DisplayName("Total Pengeluaran")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAdminNavigation.NamaAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCatNavigation.Tanggal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPen)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdLaporan"><i class="fas fa-pen-square"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.IdLaporan"><i class="fas fa-info-circle"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdLaporan"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

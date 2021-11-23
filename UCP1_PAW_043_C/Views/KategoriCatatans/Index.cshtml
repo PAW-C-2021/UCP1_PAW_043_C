@@ -1,0 +1,35 @@
+﻿@model IEnumerable<UCP1_PAW_043_C.Models.KategoriCatatan>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Kategori Catatan</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Nama Kategori")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaKategori)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdKategori"><i class="fas fa-pen-square"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.IdKategori"><i class="fas fa-info-circle"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdKategori"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
